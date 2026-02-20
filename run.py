@@ -55,6 +55,7 @@ categorical_cols=['class of worker', 'education', 'enroll in edu inst last wk',
        'own business or self employed', 'veterans benefits', 'year']
 
 df[categorical_cols] = df[categorical_cols].astype("category")
+df = df.dropna()
 
 X = df[numerical_cols + categorical_cols]
 y = df["encode_label"]
@@ -118,6 +119,7 @@ xgb = XGBClassifier(
     learning_rate=0.05,
     scale_pos_weight=scale_pos,
     eval_metric="aucpr",
+    tree_method="hist" 
 )
 
 xgb.fit(X_train_p, y_train, sample_weight=w_train)
