@@ -21,5 +21,6 @@ Other version of python and sklearns should also work, but may need to change `O
 
 ## Run model  
 `run.py` file will run logistic regression and XGBoost for income level classification, and run Kmeans for customer segmentation with specified parameter.   
+It will take minutes to run, becasue the dataset is large.
 `python run.py`  
 
